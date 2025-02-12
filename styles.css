@@ -1,0 +1,253 @@
+
+/* Importación de una fuente moderna similar a Stripe */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap');
+
+:root {
+    --primary-color: #635bff;
+    --secondary-color: #0a2540;
+    --gradient-bg: linear-gradient(135deg, #635bff, #8b5cf6);
+    --text-color: #ffffff;
+    --text-muted: #a0aec0;
+    --button-hover: #4c43db;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    background-color: #0a2540;
+    color: var(--text-color);
+}
+
+/* Barra de navegación */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 10%;
+    background: rgba(10, 37, 64, 0.8);
+    backdrop-filter: blur(10px);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar .logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 400;
+    transition: color 0.3s;
+}
+
+.navbar ul li a:hover {
+    color: var(--primary-color);
+}
+
+.cta-button {
+    background: var(--primary-color);
+    color: var(--text-color);
+    padding: 10px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background 0.3s ease;
+}
+
+.cta-button:hover {
+    background: var(--button-hover);
+}
+
+/* Antagonist Code */
+.antagonist {
+    background: #081826; /* Más oscuro que el Hero */
+    color: var(--text-color);
+    text-align: center;
+    padding: 100px 10%;
+}
+
+.antagonist h2 {
+    font-size: 40px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.antagonist p {
+    font-size: 18px;
+    color: var(--text-muted);
+    max-width: 700px;
+    margin: 0 auto 20px;
+}
+
+.antagonist img {
+    max-width: 450px;
+    animation: fadeInUp 1s ease-in-out;
+}
+
+.cta-button.secondary {
+    background: transparent;
+    border: 2px solid var(--primary-color);
+    color: var(--primary-color);
+    padding: 10px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.cta-button.secondary:hover {
+    background: var(--primary-color);
+    color: var(--text-color);
+}
+
+
+/* Hero Section */
+.hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100vh;
+    padding: 0 10%;
+    background: var(--gradient-bg);
+}
+
+.hero-content {
+    max-width: 50%;
+}
+
+.hero h1 {
+    font-size: 48px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 18px;
+    color: var(--text-muted);
+    margin-bottom: 30px;
+}
+
+.hero img {
+    max-width: 450px;
+    animation: fadeInUp 1s ease-in-out;
+}
+
+
+/* Pie de Página */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #081826;
+    color: var(--text-muted);
+}
+
+img {
+    max-width: 90%; /* No será más grande que su contenedor */
+    height: 90%; /* Mantiene la proporción */
+    display: block; /* Evita espacios vacíos debajo de la imagen */
+}
+
+/* Si las imágenes están en un contenedor específico */
+.hero-image img {
+    width: 80%; /* Se ajusta al ancho del contenedor */
+	height: 80%;
+    max-width: 450px; /* Límite para evitar que crezca demasiado */
+}
+
+/*
+.feature img {
+    width: 80px;
+    height: auto;
+}
+*/
+
+/* Sección Features */
+.features {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Centra los elementos horizontalmente */
+    text-align: center; /* Asegura que el texto también esté centrado */
+    padding: 80px 10%;
+    gap: 40px; /* Espaciado entre elementos */
+	
+	background: #162a42;
+}
+
+.feature {
+	
+	text-align: center;
+    width: 30%;
+	
+    flex: 1 1 300px; /* Hace que las tarjetas se ajusten automáticamente */
+    max-width: 350px;
+}
+
+.feature img {
+    width: 80px; /* Tamaño fijo para íconos */
+    height: auto;
+    margin: 0 auto; /* Centra la imagen */
+    display: block;
+}
+
+.feature h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.feature h3 {
+    margin-top: 20px;
+    font-size: 22px;
+}
+
+.feature p {
+    font-size: 16px;
+    color: var(--text-muted);
+}
+
+
+
+/* Animaciones */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* En pantallas más pequeñas, las features se apilan */
+@media (max-width: 768px) {
+	
+	.hero-image img {
+        max-width: 300px;
+    }
+	
+    .features {
+        flex-direction: column;
+        align-items: center; /* Centra todo en móviles */
+    }
+
+    .feature {
+        max-width: 100%; /* Ocupa todo el ancho en móviles */
+    }
+}
+
